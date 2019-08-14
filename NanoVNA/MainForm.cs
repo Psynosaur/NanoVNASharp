@@ -15,167 +15,88 @@ namespace NanoVNA
 {
 	public class MainForm : Form, IView
 	{
-		private IController controller;
-
-		private int receiveBytesCount;
-
-		private double[] mag11 = Enumerable.Repeat(1.0, 101).ToArray();
-
-		private double[] ang11 = Enumerable.Repeat(0.0, 101).ToArray();
-
-		private double[] mag21 = Enumerable.Repeat(1.0, 101).ToArray();
-
-		private double[] ang21 = Enumerable.Repeat(0.0, 101).ToArray();
-
-		private double[] freqs = Enumerable.Repeat(1.0, 101).ToArray();
-
-		private string receiveDate;
-
-		private HitTestResult myTestResult;
-
-		private IContainer components;
-
-		private ComboBox comListCbx;
-
-		private Label label3;
-
-		private Button openCloseSpbtn;
-
-		private System.Windows.Forms.Timer statustimer;
-
-		private System.Windows.Forms.Timer autoRefreshtimer;
-
-		private Button refreshbtn;
-
-		private GroupBox comGroupBox;
-
-		private Chart chart1;
-
-		private Label label8;
-
-		private GroupBox chartGroupBox;
-
-		private CheckBox autoRefreshcbx;
-
-		private GroupBox stimulusGroupBox;
-
-		private Label StartLabel;
-
-		private Label StopLabel;
-
-		private NumericUpDown StopNumericUpDown;
-
-		private NumericUpDown StartNumericUpDown;
-
-		private NumericUpDown SpanNumericUpDown;
-
-		private NumericUpDown CenterNumericUpDown;
-
-		private Label SpanLabel;
-
-		private Label CenterLabel;
-
-		private Label label4;
-
-		private Label label5;
-
-		private Label label2;
-
-		private Label label1;
-
-		private ComboBox formatComboBox;
-
-		private Label label6;
-
-		private GroupBox DataGroupBox;
-
-		private Button getDataButton;
-
-		private NumericUpDown autoRefreshtimerNumericUpDown;
-
-		private Button saveS2pButton;
-
-		private Button saveS1pButton;
-
-		private Button loadSnpFileButton;
-
-		private GroupBox stateGroupBox;
-
-		private Button recallButton;
-
-		private Button saveButton;
-
-		private GroupBox responseGroupBox;
-
-		private Button calButton;
-
-		private GroupBox saveGroupBox;
-
-		private Button save4Button;
-
-		private Button save3Button;
-
-		private Button save2Button;
-
-		private Button save1Button;
-
-		private Button save0Button;
-
-		private GroupBox recallGroupBox;
-
-		private Button Recall4Button;
-
-		private Button Recall3Button;
-
-		private Button Recall2Button;
-
-		private Button Recall1Button;
-
-		private Button Recall0Button;
-
-		private GroupBox calGroupBox;
-
-		private Button throughButton;
-
-		private Button isolationButton;
-
-		private Button loadButton;
-
-		private Button shortButton;
-
-		private Button openButton;
-
-		private Button doneButton;
-
-		private Button recallBackButton;
-
-		private Button saveBackButton;
-
-		private ToolTip chartToolTip;
-
-		private CheckBox YMinCheckBox;
-
-		private CheckBox YMaxCheckBox;
-
-		private NumericUpDown YMinNumericUpDown;
-
-		private NumericUpDown YMaxNumericUpDown;
-
-		private Label YMinLabel;
-
-		private Label YMaxLabel;
-
-		private GroupBox languageGroupBox;
-
-		private Button languageButton;
-
-		private GroupBox aboutBox;
-
-		private Button infoButton;
-
-		private Button AboutButton;
-
-		public MainForm()
+        private IController controller;
+        private int receiveBytesCount;
+        private double[] mag11 = Enumerable.Repeat(1.0, 101).ToArray();
+        private double[] ang11 = Enumerable.Repeat(0.0, 101).ToArray();
+        private double[] mag21 = Enumerable.Repeat(1.0, 101).ToArray();
+        private double[] ang21 = Enumerable.Repeat(0.0, 101).ToArray();
+        private double[] freqs = Enumerable.Repeat(1.0, 101).ToArray();
+        private string receiveDate;
+        private HitTestResult myTestResult;
+        private IContainer components;
+        private ComboBox comListCbx;
+        private Label label3;
+        private Button openCloseSpbtn;
+        private System.Windows.Forms.Timer statustimer;
+        private System.Windows.Forms.Timer autoRefreshtimer;
+        private Button refreshbtn;
+        private GroupBox comGroupBox;
+        private Chart chart1;
+        private Label label8;
+        private GroupBox chartGroupBox;
+        private CheckBox autoRefreshcbx;
+        private GroupBox stimulusGroupBox;
+        private Label StartLabel;
+        private Label StopLabel;
+        private NumericUpDown StopNumericUpDown;
+        private NumericUpDown StartNumericUpDown;
+        private NumericUpDown SpanNumericUpDown;
+        private NumericUpDown CenterNumericUpDown;
+        private Label SpanLabel;
+        private Label CenterLabel;
+        private Label label4;
+        private Label label5;
+        private Label label2;
+        private Label label1;
+        private ComboBox formatComboBox;
+        private Label label6;
+        private GroupBox DataGroupBox;
+        private Button getDataButton;
+        private NumericUpDown autoRefreshtimerNumericUpDown;
+        private Button saveS2pButton;
+        private Button saveS1pButton;
+        private Button loadSnpFileButton;
+        private GroupBox stateGroupBox;
+        private Button recallButton;
+        private Button saveButton;
+        private GroupBox responseGroupBox;
+        private Button calButton;
+        private GroupBox saveGroupBox;
+        private Button save4Button;
+        private Button save3Button;
+        private Button save2Button;
+        private Button save1Button;
+        private Button save0Button;
+        private GroupBox recallGroupBox;
+        private Button Recall4Button;
+        private Button Recall3Button;
+        private Button Recall2Button;
+        private Button Recall1Button;
+        private Button Recall0Button;
+        private GroupBox calGroupBox;
+        private Button throughButton;
+        private Button isolationButton;
+        private Button loadButton;
+        private Button shortButton;
+        private Button openButton;
+        private Button doneButton;
+        private Button recallBackButton;
+        private Button saveBackButton;
+        private ToolTip chartToolTip;
+        private CheckBox YMinCheckBox;
+        private CheckBox YMaxCheckBox;
+        private NumericUpDown YMinNumericUpDown;
+        private NumericUpDown YMaxNumericUpDown;
+        private Label YMinLabel;
+        private Label YMaxLabel;
+        private GroupBox languageGroupBox;
+        private Button languageButton;
+        private GroupBox aboutBox;
+        private Button infoButton;
+        private Button AboutButton;
+
+        public MainForm()
 		{
 			InitializeComponent();
 			InitializeCOMCombox();
