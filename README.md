@@ -1,6 +1,9 @@
 # NavoVNASharp
 Reverse engineered sources for the NanoVNASharp application
 
+Added TDR python script from this [article](https://nuclearrambo.com/wordpress/accurately-measuring-cable-length-with-nanovna/)
+just sabe s1p file :)
+
 # Important.
 
 I did not write this software, just reverse engineered it, because the sources do not appear to be available, and because the author only seems to post the binary on his google drive.
