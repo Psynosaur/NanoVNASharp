@@ -5,11 +5,13 @@ Added TDR python script from this [article](https://nuclearrambo.com/wordpress/a
 just save a s1p file and the python script will kick off :)
 
 
-# Common Goals I guess
+# Common Goals 
 
-Rewrite software interface
+ - Build a cable length calculator, determine Velocity Factor by using the lenght of cable as input parameter.
 
-Build resources for forms
+ - Rewrite software interface
+
+ - Build resources for forms
 
 
 # Important.
